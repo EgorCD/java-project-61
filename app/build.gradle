@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id 'application'
     id 'distribution'
-    id 'checkstyle'
 }
 
 group = 'hexlet.code'
@@ -13,8 +12,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.2')
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
 test {
@@ -25,10 +24,10 @@ application {
     mainClassName = 'hexlet.code.App'
 }
 
-run {
-    standardInput = System.in
-}
-
 compileJava {
     options.release = 17
+}
+
+run {
+    standardInput = System.in
 }
