@@ -24,4 +24,10 @@ application {
     mainClassName = 'hexlet.code.App'
 }
 
+run {
+    standardInput = System.in
+}
 
+compileJava {
+    options.release = 17
+}
