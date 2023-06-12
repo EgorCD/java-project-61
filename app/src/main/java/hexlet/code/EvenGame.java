@@ -1,42 +1,77 @@
 package hexlet.code;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class EvenGame {
-        public static void play() {
+        private static Scanner input = new Scanner(System.in);
+        private static Random random = new Random();
+        private static String name;
+
+        public static void playGame() {
+            greetUser();
+            runGame();
+        }
+
+        // Greeting user and explaining the rules
+        private static void greetUser() {
             System.out.println("Welcome to the Brain Games!");
-            Scanner input = new Scanner(System.in);
+            System.out.print("May I have your name? ");
+            name = input.nextLine();
+            System.out.println("Hello, " + name + "!");
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        }
 
-            int correctAnswers = 0;
-            final int maxCorrectAnswers = 3;
-
-            while (correctAnswers < maxCorrectAnswers) {
+        // Running the game
+        private static void runGame() {
+            for (int i = 0; i < 3; i++) {
                 int number = generateRandomNumber();
-                System.out.println("Question: " + number);
-                System.out.print("Your answer: ");
-                String userAnswer = input.nextLine();
-                boolean isEven = isEven(number);
-
-                if ((isEven && userAnswer.equalsIgnoreCase("yes")) || (!isEven && userAnswer.equalsIgnoreCase("no"))) {
-                    System.out.println("Correct!");
-                    correctAnswers++;
-                } else {
-                    System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + (isEven ? "no" : "yes") + "'.");
-                    System.out.println("Let's try again, " + "!");
+                if (!askQuestion(number)) {
+                    printFailure(number);
                     return;
                 }
+                printSuccess();
+            }
+            printCongratulations();
+        }
+
+        // Generating random number
+        private static int generateRandomNumber() {
+            return random.nextInt(100); // generate a random number between 0 and 99
+        }
+
+        // Asking user a question
+        private static boolean askQuestion(int number) {
+            System.out.println("Question: " + number);
+            System.out.print("Your answer: ");
+            String answer = input.nextLine();
+
+            if (number % 2 == 0) {  // if number is even
+                return answer.equals("yes");
+            } else {  // if number is odd
+                return answer.equals("no");
+            }// if user answer is incorrect
+        }
+
+        private static void printFailure(int number) {
+            String correctAnswer;
+            if (number % 2 == 0) {
+                correctAnswer = "yes";
+            } else {
+                correctAnswer = "no";
             }
 
-            System.out.println("Congratulations, " + "!");
+            System.out.println("'no' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+            System.out.println("Let's try again, " + name + "!");
         }
 
-        private static int generateRandomNumber() {
-            double randomValue = Math.random() * 100;
-            return (int) randomValue;
+        // Printing success message
+        private static void printSuccess() {
+            System.out.println("Correct!");
         }
 
-        private static boolean isEven(int number) {
-            return number % 2 == 0;
+        // Printing congratulations message
+        private static void printCongratulations() {
+            System.out.println("Congratulations, " + name + "!");
         }
 }
