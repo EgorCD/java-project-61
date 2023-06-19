@@ -1,4 +1,9 @@
 package hexlet.code;
+import hexlet.code.games.CalcGame;
+import hexlet.code.games.EvenGame;
+import hexlet.code.games.GCD;
+import hexlet.code.games.ProgressionGame;
+import hexlet.code.games.PrimeGame;
 
 import java.util.Scanner;
 
@@ -6,17 +11,35 @@ public class Engine {
     private static Scanner input = new Scanner(System.in);
     private static String name;
 
-    public static void playGame(Game newGame, String gameDescription) {
+    public static void playGame(String gameType) {
         greetUser();
-        if (gameDescription != null) {
-            System.out.println(gameDescription);
-        }
         for (int i = 0; i < 3; i++) {
-            String question = newGame.getQuestion();
+            String question;
+            String correctAnswer;
+
+            if ("Even".equals(gameType)) {
+                question = EvenGame.getQuestion();
+                correctAnswer = EvenGame.getCorrectAnswer(question);
+            } else if ("Calc".equals(gameType)) {
+                question = CalcGame.getQuestion();
+                correctAnswer = CalcGame.getCorrectAnswer(question);
+            } else if ("GCD".equals(gameType)) {
+                question = GCD.getQuestion();
+                correctAnswer = GCD.getCorrectAnswer(question);
+            } else if ("Progression".equals(gameType)) {
+                question = ProgressionGame.getQuestion();
+                correctAnswer = ProgressionGame.getCorrectAnswer(question);
+            } else if ("Prime".equals(gameType)) {
+                question = PrimeGame.getQuestion();
+                correctAnswer = PrimeGame.getCorrectAnswer(question);
+            } else {
+                throw new IllegalArgumentException("Invalid game type: " + gameType);
+            }
+
             System.out.println("Question: " + question);
             String userAnswer = getUserAnswer();
-            if (!userAnswer.equals(newGame.getCorrectAnswer(question))) {
-                printFailure(userAnswer, newGame.getCorrectAnswer(question));
+            if (!userAnswer.equals(correctAnswer)) {
+                printFailure(userAnswer, correctAnswer);
                 return;
             }
             printSuccess();

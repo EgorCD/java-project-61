@@ -1,22 +1,18 @@
 package hexlet.code.games;
 
-import hexlet.code.Game;
-
 import java.util.Random;
 
-public class CalcGame implements Game {
+public class CalcGame {
     private static Random random = new Random();
     private static String[] operations = {"+", "-", "*"};
 
-    @Override
-    public String getQuestion() {
+    public static String getQuestion() {
         String newOperation = operations[random.nextInt(operations.length)];
         int[] numbers = {random.nextInt(100), random.nextInt(100)};
         return numbers[0] + " " + newOperation + " " + numbers[1];
     }
 
-    @Override
-    public String getCorrectAnswer(String question) {
+    public static String getCorrectAnswer(String question) {
         String[] parts = question.split(" ");
         int num1 = Integer.parseInt(parts[0]);
         String operation = parts[1];

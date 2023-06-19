@@ -1,11 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.CalcGame;
-import hexlet.code.games.EvenGame;
-import hexlet.code.games.GCD;
-import hexlet.code.games.ProgressionGame;
-import hexlet.code.games.PrimeGame;
-
 import java.util.Scanner;
 
 public class App {
@@ -13,29 +7,26 @@ public class App {
         Scanner input = new Scanner(System.in);
 
         while (true) {
-            // Display Game Menu
             displayOptions();
 
-            // Get Game Option
             int choice = getUserChoice(input);
             input.nextLine();
 
-            // Evaluate Game Choice
             if (choice == 0) {
                 System.out.println("Exiting...");
                 break;
             } else if (choice == 1) {
                 Cli.greetUser();
             } else if (choice == 2) {
-                Engine.playGame(new EvenGame(), null);
+                Engine.playGame("Even");
             } else if (choice == 3) {
-                Engine.playGame(new CalcGame(), null);
+                Engine.playGame("Calc");
             } else if (choice == 4) {
-                Engine.playGame(new GCD(), null);
+                Engine.playGame("GCD");
             } else if (choice == 5) {
-                Engine.playGame(new ProgressionGame(), "What number is missing in the progression?");
+                Engine.playGame("Progression");
             } else if (choice == 6) {
-                Engine.playGame(new PrimeGame(), "Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+                Engine.playGame("Prime");
             } else {
                 System.out.println("Invalid choice. Please try again.");
             }
