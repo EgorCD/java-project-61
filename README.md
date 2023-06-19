@@ -1,6 +1,8 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/EgorCD/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/EgorCD/java-project-61/actions)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/b46157f039277bc0ff36/maintainability)](https://codeclimate.com/github/EgorCD/java-project-61/maintainability)
+
 Step 5:
 https://asciinema.org/a/3JueDgtHanvwGwceDNOz1jDIa
 
