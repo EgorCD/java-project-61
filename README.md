@@ -16,3 +16,5 @@ https://asciinema.org/a/cznqSZdBj6kGD7jqI0wAjgOax
 Step 9:
 https://asciinema.org/a/m9So4dJKCVvSnnUJ1JmyAm0Lu
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/b46157f039277bc0ff36/maintainability)](https://codeclimate.com/github/EgorCD/java-project-61/maintainability)
+
