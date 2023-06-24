@@ -1,9 +1,4 @@
 package hexlet.code;
-import hexlet.code.games.CalcGame;
-import hexlet.code.games.EvenGame;
-import hexlet.code.games.GCD;
-import hexlet.code.games.ProgressionGame;
-import hexlet.code.games.PrimeGame;
 
 import java.util.Scanner;
 
@@ -11,30 +6,12 @@ public class Engine {
     private static Scanner input = new Scanner(System.in);
     private static String name;
 
-    public static void playGame(String gameType) {
+    public static void playGame(String[][] questionsAndAnswers, String explanation) {
         greetUser();
+        System.out.println(explanation);
         for (int i = 0; i < 3; i++) {
-            String question;
-            String correctAnswer;
-
-            if ("Even".equals(gameType)) {
-                question = EvenGame.getQuestion();
-                correctAnswer = EvenGame.getCorrectAnswer(question);
-            } else if ("Calc".equals(gameType)) {
-                question = CalcGame.getQuestion();
-                correctAnswer = CalcGame.getCorrectAnswer(question);
-            } else if ("GCD".equals(gameType)) {
-                question = GCD.getQuestion();
-                correctAnswer = GCD.getCorrectAnswer(question);
-            } else if ("Progression".equals(gameType)) {
-                question = ProgressionGame.getQuestion();
-                correctAnswer = ProgressionGame.getCorrectAnswer(question);
-            } else if ("Prime".equals(gameType)) {
-                question = PrimeGame.getQuestion();
-                correctAnswer = PrimeGame.getCorrectAnswer(question);
-            } else {
-                throw new IllegalArgumentException("Invalid game type: " + gameType);
-            }
+            String question = questionsAndAnswers[i][0];
+            String correctAnswer = questionsAndAnswers[i][1];
 
             System.out.println("Question: " + question);
             String userAnswer = getUserAnswer();
@@ -72,4 +49,5 @@ public class Engine {
         System.out.println("Congratulations, " + name + "!");
     }
 }
+
 

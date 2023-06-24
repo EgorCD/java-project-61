@@ -3,16 +3,21 @@ package hexlet.code.games;
 import java.util.Random;
 
 public class PrimeGame {
-    private static int number;
+    private static Random random = new Random();
 
-    public static String getQuestion() {
-        Random random = new Random();
-        number = random.nextInt(100) + 1; // Random number between 1 and 100
-        return String.valueOf(number);
-    }
+    public static String[][] getQuestionsAndAnswers() {
+        String[][] questionsAndAnswers = new String[3][2];
 
-    public static String getCorrectAnswer(String question) {
-        return isPrime(number) ? "yes" : "no";
+        for (int i = 0; i < 3; i++) {
+            int number = random.nextInt(100) + 1; // Random number between 1 and 100
+            String question = String.valueOf(number);
+            String answer = isPrime(number) ? "yes" : "no";
+
+            questionsAndAnswers[i][0] = question;
+            questionsAndAnswers[i][1] = answer;
+        }
+
+        return questionsAndAnswers;
     }
 
     private static boolean isPrime(int num) {
@@ -27,3 +32,5 @@ public class PrimeGame {
         return true;
     }
 }
+
+

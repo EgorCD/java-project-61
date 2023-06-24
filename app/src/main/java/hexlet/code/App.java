@@ -1,5 +1,12 @@
 package hexlet.code;
 
+import hexlet.code.games.CalcGame;
+import hexlet.code.games.EvenGame;
+import hexlet.code.games.GCD;
+import hexlet.code.games.PrimeGame;
+import hexlet.code.games.ProgressionGame;
+
+
 import java.util.Scanner;
 
 public class App {
@@ -18,15 +25,20 @@ public class App {
             } else if (choice == 1) {
                 Cli.greetUser();
             } else if (choice == 2) {
-                Engine.playGame("Even");
+                Engine.playGame(EvenGame.getQuestionsAndAnswers(),
+                        null);
             } else if (choice == 3) {
-                Engine.playGame("Calc");
+                Engine.playGame(CalcGame.getQuestionsAndAnswers(),
+                        "What is the result of the expression?");
             } else if (choice == 4) {
-                Engine.playGame("GCD");
+                Engine.playGame(GCD.getQuestionsAndAnswers(),
+                        "Find the greatest common divisor of given numbers.");
             } else if (choice == 5) {
-                Engine.playGame("Progression");
+                Engine.playGame(ProgressionGame.getQuestionsAndAnswers(),
+                        "What number is missing in the progression?");
             } else if (choice == 6) {
-                Engine.playGame("Prime");
+                Engine.playGame(PrimeGame.getQuestionsAndAnswers(),
+                        "Answer 'yes' if given number is prime. Otherwise answer 'no'.");
             } else {
                 System.out.println("Invalid choice. Please try again.");
             }

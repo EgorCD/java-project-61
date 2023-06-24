@@ -5,25 +5,32 @@ import java.util.Random;
 public class CalcGame {
     private static Random random = new Random();
     private static String[] operations = {"+", "-", "*"};
+    private static String explanation = "What is the result of the expression?";
 
-    public static String getQuestion() {
-        String newOperation = operations[random.nextInt(operations.length)];
-        int[] numbers = {random.nextInt(100), random.nextInt(100)};
-        return numbers[0] + " " + newOperation + " " + numbers[1];
+    public static String[][] getQuestionsAndAnswers() {
+        String[][] questionsAndAnswers = new String[3][2];
+
+        for (int i = 0; i < 3; i++) {
+            int number1 = random.nextInt(100);
+            int number2 = random.nextInt(100);
+            String operation = operations[random.nextInt(operations.length)];
+
+            questionsAndAnswers[i][0] = number1 + " " + operation + " " + number2;
+            questionsAndAnswers[i][1] = calculate(number1, number2, operation);
+        }
+
+        return questionsAndAnswers;
     }
 
-    public static String getCorrectAnswer(String question) {
-        String[] parts = question.split(" ");
-        int num1 = Integer.parseInt(parts[0]);
-        String operation = parts[1];
-        int num2 = Integer.parseInt(parts[2]);
-
-        if (operation.equals("+")) {
-            return String.valueOf(num1 + num2);
-        } else if (operation.equals("-")) {
-            return String.valueOf(num1 - num2);
+    private static String calculate(int number1, int number2, String operation) {
+        if ("+".equals(operation)) {
+            return String.valueOf(number1 + number2);
+        } else if ("-".equals(operation)) {
+            return String.valueOf(number1 - number2);
+        } else if ("*".equals(operation)) {
+            return String.valueOf(number1 * number2);
         } else {
-            return String.valueOf(num1 * num2);
+            throw new IllegalArgumentException("Invalid operation: " + operation);
         }
     }
 }
