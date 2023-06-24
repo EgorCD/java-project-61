@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64d0d945-24f4-4ed1-be82-d5cf2ee12f6d" name="Changes" comment="changes">
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/app-1.0-SNAPSHOT.tar" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/app-1.0-SNAPSHOT.tar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/app-1.0-SNAPSHOT.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/app-1.0-SNAPSHOT.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/app-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/app-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/games/CalcGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/games/CalcGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/games/EvenGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/games/EvenGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/games/GCD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/games/GCD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/games/PrimeGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/games/PrimeGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hexlet/code/games/ProgressionGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hexlet/code/games/ProgressionGame.java" afterDir="false" />
-    </list>
+    <list default="true" id="64d0d945-24f4-4ed1-be82-d5cf2ee12f6d" name="Changes" comment="changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -248,7 +235,7 @@
       <workItem from="1686566415232" duration="1590000" />
       <workItem from="1686568028409" duration="20531000" />
       <workItem from="1687168390302" duration="1042000" />
-      <workItem from="1687531125642" duration="5938000" />
+      <workItem from="1687531125642" duration="6253000" />
     </task>
     <task id="LOCAL-00001" summary="changes">
       <created>1686488320559</created>
@@ -313,7 +300,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687168840760</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="changes">
+      <created>1687635201515</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1687635201515</updated>
+    </task>
+    <task id="LOCAL-00011" summary="changes">
+      <created>1687635293311</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1687635293311</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

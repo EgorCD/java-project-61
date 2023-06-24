@@ -5,8 +5,6 @@ import java.util.Random;
 public class CalcGame {
     private static Random random = new Random();
     private static String[] operations = {"+", "-", "*"};
-    private static String explanation = "What is the result of the expression?";
-
     public static String[][] getQuestionsAndAnswers() {
         String[][] questionsAndAnswers = new String[3][2];
 
