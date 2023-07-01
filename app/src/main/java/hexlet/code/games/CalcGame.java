@@ -5,19 +5,19 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public class CalcGame {
-    private static int rounds = 3;
-    private static String gameExplanation = "What is the result of the expression?";
+    private static final int ROUNDS = 3;
+    private static final String EXPLANATION = "What is the result of the expression?";
     private static Random random = new Random();
     private static String[] operations = {"+", "-", "*"};
 
     public static void run() {
-        String[][] questionsAndAnswers = new String[rounds][2];
+        String[][] questionsAndAnswers = new String[ROUNDS][2];
 
-        for (int i = 0; i < rounds; i++) {
+        for (int i = 0; i < ROUNDS; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
 
-        Engine.playGame(questionsAndAnswers, gameExplanation);
+        Engine.playGame(questionsAndAnswers, EXPLANATION);
     }
 
     private static String[] generateRoundData() {

@@ -19,30 +19,17 @@ public class App {
             input.nextLine();
 
             switch (choice) {
-                case 0:
+                case 0 -> {
                     System.out.println("Exiting...");
                     return;
-                case 1:
-                    Cli.greetUser();
-                    break;
-                case 2:
-                    EvenGame.run();
-                    break;
-                case 3:
-                    CalcGame.run();
-                    break;
-                case 4:
-                    GCD.run();
-                    break;
-                case 5:
-                    ProgressionGame.run();
-                    break;
-                case 6:
-                    PrimeGame.run();
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
-                    break;
+                }
+                case 1 -> Cli.greetUser();
+                case 2 -> EvenGame.run();
+                case 3 -> CalcGame.run();
+                case 4 -> GCD.run();
+                case 5 -> ProgressionGame.run();
+                case 6 -> PrimeGame.run();
+                default -> System.out.println("Invalid choice. Please try again.");
             }
         }
     }
