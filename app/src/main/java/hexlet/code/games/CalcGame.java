@@ -2,34 +2,47 @@ package hexlet.code.games;
 
 import java.util.Random;
 
+import hexlet.code.Engine;
+
 public class CalcGame {
+    private static int rounds = 3;
+    private static String gameExplanation = "What is the result of the expression?";
     private static Random random = new Random();
     private static String[] operations = {"+", "-", "*"};
-    public static String[][] getQuestionsAndAnswers() {
-        String[][] questionsAndAnswers = new String[3][2];
 
-        for (int i = 0; i < 3; i++) {
-            int number1 = random.nextInt(100);
-            int number2 = random.nextInt(100);
-            String operation = operations[random.nextInt(operations.length)];
+    public static void run() {
+        String[][] questionsAndAnswers = new String[rounds][2];
 
-            questionsAndAnswers[i][0] = number1 + " " + operation + " " + number2;
-            questionsAndAnswers[i][1] = calculate(number1, number2, operation);
+        for (int i = 0; i < rounds; i++) {
+            questionsAndAnswers[i] = generateRoundData();
         }
 
-        return questionsAndAnswers;
+        Engine.playGame(questionsAndAnswers, gameExplanation);
+    }
+
+    private static String[] generateRoundData() {
+        String[] questionAndAnswer = new String[2];
+
+        int number1 = random.nextInt(100);
+        int number2 = random.nextInt(100);
+        String operation = operations[random.nextInt(operations.length)];
+
+        questionAndAnswer[0] = number1 + " " + operation + " " + number2;
+        questionAndAnswer[1] = calculate(number1, number2, operation);
+
+        return questionAndAnswer;
     }
 
     private static String calculate(int number1, int number2, String operation) {
-        if ("+".equals(operation)) {
-            return String.valueOf(number1 + number2);
-        } else if ("-".equals(operation)) {
-            return String.valueOf(number1 - number2);
-        } else if ("*".equals(operation)) {
-            return String.valueOf(number1 * number2);
-        } else {
-            throw new IllegalArgumentException("Invalid operation: " + operation);
+        switch (operation) {
+            case "+":
+                return String.valueOf(number1 + number2);
+            case "-":
+                return String.valueOf(number1 - number2);
+            case "*":
+                return String.valueOf(number1 * number2);
+            default:
+                throw new IllegalArgumentException("Invalid operation: " + operation);
         }
     }
 }
-

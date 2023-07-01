@@ -6,7 +6,6 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.PrimeGame;
 import hexlet.code.games.ProgressionGame;
 
-
 import java.util.Scanner;
 
 public class App {
@@ -19,31 +18,33 @@ public class App {
             int choice = getUserChoice(input);
             input.nextLine();
 
-            if (choice == 0) {
-                System.out.println("Exiting...");
-                break;
-            } else if (choice == 1) {
-                Cli.greetUser();
-            } else if (choice == 2) {
-                Engine.playGame(EvenGame.getQuestionsAndAnswers(),
-                        null);
-            } else if (choice == 3) {
-                Engine.playGame(CalcGame.getQuestionsAndAnswers(),
-                        "What is the result of the expression?");
-            } else if (choice == 4) {
-                Engine.playGame(GCD.getQuestionsAndAnswers(),
-                        "Find the greatest common divisor of given numbers.");
-            } else if (choice == 5) {
-                Engine.playGame(ProgressionGame.getQuestionsAndAnswers(),
-                        "What number is missing in the progression?");
-            } else if (choice == 6) {
-                Engine.playGame(PrimeGame.getQuestionsAndAnswers(),
-                        "Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-            } else {
-                System.out.println("Invalid choice. Please try again.");
+            switch (choice) {
+                case 0:
+                    System.out.println("Exiting...");
+                    return;
+                case 1:
+                    Cli.greetUser();
+                    break;
+                case 2:
+                    EvenGame.run();
+                    break;
+                case 3:
+                    CalcGame.run();
+                    break;
+                case 4:
+                    GCD.run();
+                    break;
+                case 5:
+                    ProgressionGame.run();
+                    break;
+                case 6:
+                    PrimeGame.run();
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
             }
         }
-        input.close();
     }
 
     private static void displayOptions() {
@@ -62,6 +63,3 @@ public class App {
         return input.nextInt();
     }
 }
-
-
-
