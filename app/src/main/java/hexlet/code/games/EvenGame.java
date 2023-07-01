@@ -7,7 +7,7 @@ import java.util.Random;
 public class EvenGame {
     private static final int ROUNDS = 3;
     private static final String EXPLANATION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    private static Random random = new Random();
+    private static final Random RANDOM = new Random();
 
     public static void run() {
         String[][] questionsAndAnswers = new String[ROUNDS][2];
@@ -22,7 +22,7 @@ public class EvenGame {
     private static String[] generateRoundData() {
         String[] questionAndAnswer = new String[2];
 
-        int number = random.nextInt(100);
+        int number = RANDOM.nextInt(100);
         questionAndAnswer[0] = String.valueOf(number);
         questionAndAnswer[1] = isEven(number) ? "yes" : "no";
 

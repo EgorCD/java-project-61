@@ -7,7 +7,7 @@ import java.util.Random;
 public class GCD {
     private static final int ROUNDS = 3;
     private static final String EXPLANATION = "Find the greatest common divisor of given numbers.";
-    private static Random random = new Random();
+    private static final Random RANDOM = new Random();
 
     public static void run() {
         String[][] questionsAndAnswers = new String[ROUNDS][2];
@@ -22,8 +22,8 @@ public class GCD {
     private static String[] generateRoundData() {
         String[] questionAndAnswer = new String[2];
 
-        int number1 = random.nextInt(100) + 1;
-        int number2 = random.nextInt(100) + 1;
+        int number1 = RANDOM.nextInt(100) + 1;
+        int number2 = RANDOM.nextInt(100) + 1;
 
         questionAndAnswer[0] = number1 + " " + number2;
         questionAndAnswer[1] = String.valueOf(gcd(number1, number2));

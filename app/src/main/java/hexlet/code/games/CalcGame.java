@@ -7,8 +7,8 @@ import hexlet.code.Engine;
 public class CalcGame {
     private static final int ROUNDS = 3;
     private static final String EXPLANATION = "What is the result of the expression?";
-    private static Random random = new Random();
-    private static String[] operations = {"+", "-", "*"};
+    private static final Random RANDOM = new Random();
+    private static final String[] OPERATIONS = {"+", "-", "*"};
 
     public static void run() {
         String[][] questionsAndAnswers = new String[ROUNDS][2];
@@ -23,9 +23,9 @@ public class CalcGame {
     private static String[] generateRoundData() {
         String[] questionAndAnswer = new String[2];
 
-        int number1 = random.nextInt(100);
-        int number2 = random.nextInt(100);
-        String operation = operations[random.nextInt(operations.length)];
+        int number1 = RANDOM.nextInt(100);
+        int number2 = RANDOM.nextInt(100);
+        String operation = OPERATIONS[RANDOM.nextInt(OPERATIONS.length)];
 
         questionAndAnswer[0] = number1 + " " + operation + " " + number2;
         questionAndAnswer[1] = calculate(number1, number2, operation);
@@ -34,15 +34,11 @@ public class CalcGame {
     }
 
     private static String calculate(int number1, int number2, String operation) {
-        switch (operation) {
-            case "+":
-                return String.valueOf(number1 + number2);
-            case "-":
-                return String.valueOf(number1 - number2);
-            case "*":
-                return String.valueOf(number1 * number2);
-            default:
-                throw new IllegalArgumentException("Invalid operation: " + operation);
-        }
+        return switch (operation) {
+            case "+" -> String.valueOf(number1 + number2);
+            case "-" -> String.valueOf(number1 - number2);
+            case "*" -> String.valueOf(number1 * number2);
+            default -> throw new IllegalArgumentException("Invalid operation: " + operation);
+        };
     }
 }

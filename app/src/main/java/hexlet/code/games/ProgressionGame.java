@@ -7,7 +7,7 @@ import java.util.Random;
 public class ProgressionGame {
     private static final int ROUNDS = 3;
     private static final String EXPLANATION = "What number is missing in the progression?";
-    private static Random random = new Random();
+    private static final Random RANDOM = new Random();
 
     public static void run() {
         String[][] questionsAndAnswers = new String[ROUNDS][2];
@@ -22,10 +22,10 @@ public class ProgressionGame {
     private static String[] generateRoundData() {
         String[] questionAndAnswer = new String[2];
 
-        int start = random.nextInt(100);
-        int step = random.nextInt(10) + 1;
-        int length = random.nextInt(10) + 5;
-        int hidden = random.nextInt(length);
+        int start = RANDOM.nextInt(100);
+        int step = RANDOM.nextInt(10) + 1;
+        int length = RANDOM.nextInt(10) + 5;
+        int hidden = RANDOM.nextInt(length);
 
         StringBuilder progression = new StringBuilder();
         for (int i = 0; i < length; i++) {

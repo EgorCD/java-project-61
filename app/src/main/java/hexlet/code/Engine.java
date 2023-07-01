@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Engine {
     private static final int ROUNDS = 3;
-    private static Scanner input = new Scanner(System.in);
+    private static final Scanner INPUT = new Scanner(System.in);
 
     public static void playGame(String[][] questionsAndAnswers, String explanation) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        String name = input.nextLine();
+        String name = INPUT.nextLine();
         System.out.println("Hello, " + name + "!");
         System.out.println(explanation);
 
@@ -30,7 +30,7 @@ public class Engine {
 
     private static String getUserAnswer() {
         System.out.print("Your answer: ");
-        return input.nextLine();
+        return INPUT.nextLine();
     }
 
     private static void printFailure(String userAnswer, String correctAnswer, String name) {
